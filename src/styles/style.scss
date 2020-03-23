@@ -1,0 +1,19 @@
+@import './variables';
+//3rd party
+@import '~bootstrap/scss/bootstrap-grid';
+// main styling
+@import './base';
+@import './helpers';
+@import './controls';
+@import './fonts';
+@import './typorgaphy';
+@import './layout';
+//@import './icons/nucleo';
+// components
+@import './components/header';
+@import './components/footer';
+@import './components/navigation';
+@import './components/select';
+// pages
+@import './pages/index';
+@import './pages/skills';

@@ -1,0 +1,19 @@
+html {
+  box-sizing: border-box;
+}
+
+body{
+  background: $white;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  outline: none !important;
+}
+
+//css vars
+:root {
+}

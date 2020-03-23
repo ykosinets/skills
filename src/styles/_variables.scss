@@ -1,0 +1,36 @@
+// fonts
+$proxima: 'ProximaNova', sans-serif;
+$roboto: 'Roboto', sans-serif;
+
+// paths
+$path: (
+  font: '../fonts',
+  img: '../images'
+);
+
+$path-font: map-get($path, font);
+$path-img: map-get($path, img);
+// colors
+$primary: #f00;
+$secondary: #00f;
+$white: #fff;
+$black: #000;
+
+// states
+$state-active: '&:hover, &:focus, &:active, &:active:hover, &:active:focus';
+
+//3rd party assets
+//nucleo icon font
+$icon-font-path: '#{$path-font}/nucleo';
+
+//bootstrap
+$font-family-base: $proxima;
+//bootstrap:grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1920px
+);

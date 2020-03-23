@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('#{$path-font}/ProximaNova/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+  url('#{$path-font}/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+  url('#{$path-font}/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('#{$path-font}/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+  url('#{$path-font}/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+  url('#{$path-font}/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('#{$path-font}/ProximaNova/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+  url('#{$path-font}/ProximaNova/ProximaNova-Semibold.woff') format('woff'),
+  url('#{$path-font}/ProximaNova/ProximaNova-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}

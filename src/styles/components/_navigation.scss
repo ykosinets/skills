@@ -1,0 +1,22 @@
+.site-navigation {
+  .logo {
+    img {
+      width: 100%;
+    }
+  }
+
+  .user {
+  }
+
+  &-menu {
+    li {
+      display: block;
+
+      &.active a {
+      }
+    }
+  }
+
+  a {
+  }
+}

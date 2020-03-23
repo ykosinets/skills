@@ -1,0 +1,77 @@
+//.btn-custom {
+//  @include button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%));
+//}
+$controls-radius: 25px;
+
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin generate-button($size: md, $background: $primary, $color: #4F472A, $hover-background: lighten($primary, .25), $hover-color: #4F472A, $focus-background: lighten($primary, .45), $focus-color: #4F472A, $active-background: lighten($primary, .65), $active-color: #4F472A) {
+  font-size: 1.125rem;
+  border-radius: 100px;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: $background;
+  color: $color;
+  border: none;
+  opacity: 1;
+  box-shadow: none;
+  will-change: background, color;
+  transition: .3s color ease-in-out, .3s background ease-in-out;
+
+  &:hover{
+    background: $hover-background;
+    color: $hover-color;
+  }
+
+  &:focus{
+    background: $focus-background;
+    color: $focus-color;
+  }
+
+  &:active{
+    background: $active-background;
+    color: $active-color;
+  }
+
+  @if ($size == md) {
+    font-weight: 600;
+    padding: 12px 41px;
+  }
+
+  @if ($size == lg) {
+    font-weight: 700;
+    padding: 16px 55px;
+  }
+}
+
+@mixin generate-select($color) {
+  .caret {
+    border-top: 11px solid $color;
+  }
+
+  .select2-selection {
+    border: 3px solid lighten($color, 46%);
+    color: $color;
+  }
+}
+
+.btn-none {
+  color: $black;
+  border: none;
+  background: none;
+  box-shadow: none !important;
+}
