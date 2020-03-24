@@ -43,7 +43,7 @@ module.exports = {
   devServer: {
     allowedHosts: [
       'ykosinets.xyz',
-      'ykosinets.xyz/schoolTraining/'
+      'ykosinets.xyz/skills/'
     ]
   },
   module: {
@@ -113,12 +113,13 @@ module.exports = {
   },
   plugins: [
     new FaviconsWebpackPlugin({
-      logo: './images/logo.svg',
+      logo: './images/logo.png',
       publicPath: './images/favicon',
+      outputPath: './images/favicon',
       prefix: '',
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[hash:8].css',
+      filename: 'styles/[name].css',
     }),
     new CopyWebpackPlugin([{from: paths.static}]),
   ].concat(htmlPlugins)

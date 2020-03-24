@@ -18,54 +18,108 @@ $controls-radius: 25px;
   }
 }
 
-@mixin generate-button($size: md, $background: $primary, $color: #4F472A, $hover-background: lighten($primary, .25), $hover-color: #4F472A, $focus-background: lighten($primary, .45), $focus-color: #4F472A, $active-background: lighten($primary, .65), $active-color: #4F472A) {
-  font-size: 1.125rem;
+@mixin generate-button($background: $primary, $color: $primary-dirty, $hover-background: lighten($primary, 16%), $hover-color: $primary-dirty, $focus-background: lighten($primary, 20%), $focus-color: $primary-dirty, $active-background: lighten($primary, 35%), $active-color: $primary-dirty) {
   border-radius: 100px;
+  display: inline-block;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-  background: $background;
   color: $color;
-  border: none;
   opacity: 1;
   box-shadow: none;
+  background: $background;
+  text-transform: uppercase;
   will-change: background, color;
   transition: .3s color ease-in-out, .3s background ease-in-out;
 
-  &:hover{
+  &:hover {
     background: $hover-background;
     color: $hover-color;
   }
 
-  &:focus{
+  &:focus {
     background: $focus-background;
     color: $focus-color;
   }
 
-  &:active{
+  &:active {
     background: $active-background;
     color: $active-color;
   }
+}
 
-  @if ($size == md) {
+@mixin generate-button-size($size: md) {
+  @if ($size == sm) {
+    font-size: .875rem;
     font-weight: 600;
-    padding: 12px 41px;
+    padding: 10px 30px;
+    min-width: 120px;
+  }
+  @if ($size == md) {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 12px 50px;
+    min-width: 150px;
+  }
+  @if ($size == lg) {
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 18px 40px;
+    min-width: 200px;
+  }
+}
+
+@mixin generate-button-type($type: default, $color: $primary) {
+  @if ($type == default) {
+    border: none;
   }
 
-  @if ($size == lg) {
-    font-weight: 700;
-    padding: 16px 55px;
+  @if ($type == outline) {
+    border: 1px solid $color;
+    background: transparent;
   }
 }
 
 @mixin generate-select($color) {
-  .caret {
-    border-top: 11px solid $color;
+  position: relative;
+  max-width: 680px;
+
+  select {
+    cursor: pointer;
+    border: none;
+    background: $white;
+    outline: none;
+    width: 100%;
+    border-radius: 7px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: $color;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 17px 30px;
+    box-shadow: 0 0 0 0 rgba($primary, .3);
+    will-change: box-shadow;
+    transition: .2s box-shadow ease-in-out;
+
+    &:focus option:first-child:disabled {
+      display: none;
+    }
+
+    &:focus {
+      box-shadow: 0 0 10px 3px rgba($primary, .3);
+    }
   }
 
-  .select2-selection {
-    border: 3px solid lighten($color, 46%);
+  .icon-angle-down-md {
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    font-size: .6666rem;
     color: $color;
+    transform: translate(0, -50%);
   }
 }
 
@@ -74,4 +128,25 @@ $controls-radius: 25px;
   border: none;
   background: none;
   box-shadow: none !important;
+}
+
+.btn__login {
+  @include generate-button(transparent, $primary, $primary, $navy-dark, $primary, $navy-dark, $white, $navy-dark);
+  @include generate-button-size(md);
+  @include generate-button-type(outline, $primary);
+
+  @include media-breakpoint-down(sm) {
+    padding: 7px 11px;
+    min-width: 0;
+  }
+}
+
+.btn__submit {
+  @include generate-button($primary);
+  @include generate-button-size(lg);
+  @include generate-button-type();
+}
+
+.select {
+  @include generate-select(#8790B3);
 }

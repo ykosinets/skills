@@ -11,10 +11,25 @@ $path: (
 $path-font: map-get($path, font);
 $path-img: map-get($path, img);
 // colors
-$primary: #f00;
-$secondary: #00f;
+$primary: #FFD951;
+$secondary: #6046FF;
+$silent: #596281;
+$light: #B4C4D9;
 $white: #fff;
+$navy-dirty: #435271;
+$navy-dirty-light: #35435F;
+$blue-light: #6980AB;
+$blue: #74c4fd;
+$violet-light: #888CA8;
+$white-dirty: #A7AABA;
+$white-dirty-light: #EAEDF7;
 $black: #000;
+$navy-dark: #151726;
+$dark: #1F223E;
+$primary-dirty: #4F472A;
+$primary-dirty-light: #686455;
+$green: #6CA872;
+$red: #F35353;
 
 // states
 $state-active: '&:hover, &:focus, &:active, &:active:hover, &:active:focus';
@@ -31,6 +46,12 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px,
+  xl: 1230px,
   xxl: 1920px
 );
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1170px
+) !default;

@@ -1,0 +1,65 @@
+.logo {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  user-select: none;
+  white-space: nowrap;
+  z-index: $zindex-fixed - 1;
+  position: relative;
+  font-size: 16px;
+
+  @include media-breakpoint-up(md){
+    font-size: 20px;
+    align-items: flex-start;
+  }
+
+  &__image {
+    margin-right: .65em;
+    overflow: visible;
+    max-width: 1.8em;
+  }
+
+  &:hover .logo__question-wrapper{
+    transform: rotate(12.5deg);
+    animation: 1s bounce .1s cubic-bezier(.97,.01,.24,.25) infinite;
+    transform-origin: bottom center;
+  }
+
+  &__question {
+    fill: $primary;
+
+    &-wrapper{
+      transition: .1s transform ease-in;
+    }
+  }
+
+  &__three {
+    fill: $secondary;
+  }
+
+  &__title {
+    color: $primary;
+    font-weight: 600;
+    font-size: 1.3em;
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: .46155em;
+    color: $silent;
+    margin-top: -1px;
+  }
+}
+
+
+@keyframes bounce {
+  0%,100%{
+    transform: rotate(12.5deg);
+  }
+  50%{
+    transform: rotate(-7.5deg);
+  }
+}

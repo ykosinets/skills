@@ -1,0 +1,25 @@
+<div class="tabs">
+  <ul class="tabs__navigation">
+    <li class="tabs__navigation-item answers active">
+      <a href="#">
+        <span>Answer</span>
+      </a>
+    </li>
+
+    <li class="tabs__navigation-item tabs__navigation-item--primary question">
+      <a href="#">
+      <span>
+        Question
+        <span class="badge">5</span>
+      </span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="tabs__content">
+    <div class="tabs__content-item">
+      ${require('./comments.html').default}
+      ${require('./comments.html').default}
+    </div>
+  </div>
+</div>

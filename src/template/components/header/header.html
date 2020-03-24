@@ -1,0 +1,53 @@
+<header class="page-header">
+  <div class="container">
+    <div class="navigation">
+      <div class="navigation__brand">
+        ${require('../../components/logo.html').default}
+      </div>
+
+      <div class="collapsible">
+        <ul class="navigation__menu">
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="skills.html">
+              Skills
+            </a>
+          </li>
+
+          <li>
+            <a href="skills.html">
+              Shared
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="dropdown navigation__controls">
+        <a href="#" class="dropdown__link">
+          <img class="dropdown__avatar" src="${require('../../../images/avatar.jpg')}" alt="Jonathan">
+          <span>Jonathan</span>
+          <span class="icon icon-angle-down-sm"></span>
+        </a>
+
+        <div class="dropdown__menu" style="display: none">
+          <ul>
+            <li>
+              <a href="#">Something</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="toggle__button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

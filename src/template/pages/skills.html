@@ -4,39 +4,22 @@
 ${require('../components/head.html').default}
 
 <body class="page-skills" style="opacity: 0">
+<div class="background rounded"></div>
+${require('../components/header/header.html').default}
 
-<main>
-  <div class="page-content">
-    <div class="container">
-      <div class="navigation-horizontal">
-        <div class="brand">
-          <a href="index.html">
-          </a>
-        </div>
+<main class="container">
+  ${require('../components/sidebar/sidebar.html').default}
 
-        <ul>
-          <li>
-            <a href="index.html">
-              Home
-            </a>
-          </li>
+  <div class="content">
+    <h3 class="content__title">Jonathan</h3>
 
-          <li>
-            <a href="skills.html">
-              Skills
-            </a>
-          </li>
+    ${require('../components/tags.html').default}
 
-          <li>
-            <a href="skills.html">
-              Shared
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    ${require('../components/tabs.html').default}
   </div>
 </main>
+
+${require('../components/footer.html').default}
 
 </body>
 </html>

@@ -1,0 +1,68 @@
+.tabs {
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid #EAEDF6;
+    margin-bottom: 38px;
+
+    &-item {
+      width: 50%;
+      margin-bottom: -2px;
+
+      &.answers.active a {
+        color: $secondary;
+      }
+
+      &.question.active a {
+        color: #F0C118;
+      }
+
+      &.active a {
+        border-bottom: 3px solid;
+      }
+
+      a {
+        font-size: 1.75rem;
+        color: #33343F;
+        font-weight: 600;
+        text-align: center;
+        display: block;
+        padding: 15px 25px;
+        text-decoration: none;
+
+        @include media-breakpoint-up(md) {
+          padding: 25px;
+        }
+
+        span {
+          position: relative;
+        }
+      }
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    color: $white;
+    background: $red;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    display: block;
+    font-weight: 400;
+    border-radius: 20px;
+
+    @include media-breakpoint-up(md) {
+      padding: 1px 0 0 1px;
+      top: -12px;
+      right: -30px;
+    }
+  }
+}

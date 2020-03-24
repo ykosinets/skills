@@ -1,2 +1,26 @@
 .page-index {
+  background: linear-gradient(180deg, #222545 0%, #11131D 100%);
+
+  .navigation {
+    @include interpolate(padding-left, md, xxl, 0, 200px);
+
+    &__brand {
+      margin-left: 0;
+    }
+  }
+
+  .content {
+    margin: auto 0;
+    width: 100%;
+    @include interpolate(padding-left, md, xxl, 0, 200px);
+    @include interpolate(padding-right, md, xxl, 0, 135px);
+  }
+
+  .page__title {
+    br {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
 }

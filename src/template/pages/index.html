@@ -4,38 +4,24 @@
 ${require('../components/head.html').default}
 
 <body class="page-index" style="opacity: 0">
+${require('../components/header/header-login.html').default}
 
-<main>
-  <div class="page-content">
-    <div class="container">
-      <div class="navigation-horizontal">
-        <div class="brand">
+<main class="container">
+  <div class="content">
+    <h1 class="page__title">
+      In what area <br> are you an
+      <mark>expert?</mark>
+    </h1>
 
-        </div>
+    <p class="page__subtitle">
+      Choose 3 areas in which you are an expert, and people will be able to ask you any question
+    </p>
 
-        <ul>
-          <li>
-            <a href="index.html">
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a href="skills.html">
-              Skills
-            </a>
-          </li>
-
-          <li>
-            <a href="skills.html">
-              Shared
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    ${require('../components/form.html').default}
   </div>
 </main>
+
+${require('../components/footer.html').default}
 
 </body>
 </html>

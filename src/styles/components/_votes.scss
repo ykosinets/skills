@@ -1,0 +1,23 @@
+.votes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+
+  .icon-rotate-180 {
+    vertical-align: bottom;
+  }
+
+  &__count {
+
+    &--positive {
+      color: $green;
+    }
+
+    &--negative {
+      color: $red;
+    }
+  }
+}

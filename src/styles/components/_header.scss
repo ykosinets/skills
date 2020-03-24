@@ -1,32 +1,53 @@
 :root {
-  --page-title-font-size: 1.875rem;
 }
 
 .page {
   &-header {
     position: relative;
-    padding: 0;
-    //margin: var(--page-content-margin-y) 0;
+    padding: 20px 0;
+    width: 100%;
+    margin-bottom: 38px;
 
-    ul {
-      font-size: 42px;
+    @include media-breakpoint-up(md){
+      padding: 35px 0;
+    }
 
-      li {
-        margin: 0 0 0 40px;
+    @include media-breakpoint-up(lg){
+      padding: 50px 0;
+    }
 
-        &:first-child {
-          margin-left: 0;
-        }
+    .collapsible {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: space-between;
 
-        a {
-          //color: $inactive;
-          transition: .3s color ease-in-out;
-
-          &:hover {
-            color: $primary;
-          }
-        }
+      @include media-breakpoint-down(sm) {
+        flex-direction: column-reverse;
+        align-items: center;
+        flex-grow: 1;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        backdrop-filter: blur(10px);
+        background-color: rgba($black, .5);
+        z-index: 200;
+        padding-top: 91px;
+        pointer-events: none;
+        opacity: 0;
+        will-change: opacity;
+        transition: .3s opacity ease-in-out;
       }
+    }
+
+    .navigation.active .collapsible{
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 
@@ -34,8 +55,5 @@
     margin: 0;
     line-height: 1;
     font-weight: 600;
-    //font-family: $saira;
-    //font-size: var(--page-title-font-size);
-    //color: $blue-900;
   }
 }

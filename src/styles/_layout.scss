@@ -1,17 +1,25 @@
 main {
   width: 100%;
-  min-height: 100vh;
+  //min-height: 100vh;
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
   align-items: stretch;
   justify-content: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  z-index: 20;
+  position: relative;
+
+  @include media-breakpoint-up(md){
+    flex-direction: row;
+  }
 }
 
 body {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-items: stretch;
   justify-content: stretch;
@@ -22,9 +30,32 @@ body {
   &.loaded {
     opacity: 1 !important;
   }
+
+  &.menu-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
 }
 
-.page-content {
-  flex-grow: 1;
-  padding: 0;
+.background {
+  width: 100%;
+  background: linear-gradient(180deg, #222545 0%, #11131D 100%);
+  min-height: 350px;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  &.rounded{
+    @include media-breakpoint-up(md) {
+      border-radius: 0 0 0 100px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      min-height: 350px;
+    }
+  }
 }

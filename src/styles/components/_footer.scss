@@ -1,2 +1,17 @@
 .page-footer {
+  text-align: center;
+  padding: 15px;
+  z-index: 2;
+  margin-top: auto;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    padding: 40px 15px;
+  }
+
+  p {
+    color: #4C5260;
+    font-size: .9375rem;
+    line-height: 1.2;
+  }
 }

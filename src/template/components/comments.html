@@ -1,0 +1,55 @@
+<div class="comment">
+  <div class="comment__header">
+    <div class="comment__user">
+      <img src="${require('../../images/avatar.jpg')}" alt="Jonathan">
+
+      <div class="comment__user-row">
+        <p class="comment__user-name">
+          Nora Random
+        </p>
+        <span class="tag">UX/UI Design</span>
+      </div>
+    </div>
+
+    <div class="comment__controls">
+      <a href="#"><span class="icon icon-times"></span></a>
+    </div>
+  </div>
+
+  <div class="comment__body">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sem orci, tortor magna non amet lorem enim. Egestas urna
+      pulvinar suspendisse in?
+    </p>
+  </div>
+
+  <div class="comment__reply">
+    <div class="comment__header">
+      <div class="comment__user">
+        <img src="${require('../../images/avatar.jpg')}" alt="Jonathan">
+
+        <div class="comment__user-row">
+          <p class="comment__user-name">
+            Jonathan
+          </p>
+
+          <span class="comment__date">17.03.2020</span>
+        </div>
+      </div>
+
+
+      <div class="comment__controls">
+        ${require('./votes.html').default}
+      </div>
+    </div>
+
+    <div class="comment__body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis aliquam tortor, lobortis ultrices ultrices
+        massa. Fermentum quisque dolor dictum malesuada est donec diam risus, sed. Semper vitae orci elit duis egestas
+        in. Commodo rutrum magnis interdum purus posuere quam ornare cum tellus. Libero at vestibulum ac faucibus
+        pretium.
+      </p>
+    </div>
+  </div>
+</div>

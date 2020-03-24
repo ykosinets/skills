@@ -7,6 +7,7 @@ import 'select2';
 //custom
 import './helpers/vh';
 import './helpers/loading';
+import './components/menu';
 
 //initializations
 

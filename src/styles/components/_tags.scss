@@ -1,0 +1,115 @@
+.tags {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-decoration: none;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(md) {
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    @include interpolate(font-size, lg, xxl, 14px, 18px);
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .4444em 1.3333em;
+    color: $blue-light;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid #2B3B5A;
+    white-space: nowrap;
+    margin-bottom: .75em;
+    margin-right: 10px;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: 1.6666em;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--primary {
+      color: $primary;
+      border: 1px solid $primary-dirty-light;
+
+      .tags__item-type {
+        color: $primary-dirty-light;
+      }
+    }
+
+    &-type {
+      color: $navy-dirty-light;
+      position: absolute;
+      right: 7px;
+      top: -1px;
+      transform: translate(0, -50%);
+      background: $navy-dark;
+      padding: 0 5px;
+      line-height: 1;
+      @include interpolate(font-size, lg, xxl, 12px, 14px);
+    }
+  }
+
+  &__control {
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include media-breakpoint-up(md){
+      margin-right: 15px;
+    }
+
+    @include media-breakpoint-up(lg){
+      margin-left: 40px;
+      margin-top: -12px;
+      margin-right: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: $navy-dirty;
+      white-space: nowrap;
+      will-change: color;
+      transition: .2s color ease-in-out;
+
+      &:hover {
+        color: $secondary;
+      }
+
+      .icon {
+        margin-right: 9px;
+        font-size: .75rem;
+        will-change: color;
+        transition: .2s color ease-in-out;
+      }
+    }
+  }
+}
