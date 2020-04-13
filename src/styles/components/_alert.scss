@@ -1,0 +1,73 @@
+.alert {
+  position: fixed;
+  top: 43px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 20px 64px;
+  border-radius: 5px;
+  background: #141722;
+  min-width: 473px;
+  z-index: $zindex-modal;
+
+  @include media-breakpoint-down(md){
+    min-width: 0;
+    width: calc(100% - 30px);
+  }
+
+  p{
+    color: $primary;
+    margin: 0;
+  }
+
+  .icon-times {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 24px;
+      height: 0;
+      color: #373F54;
+      border-bottom: 1px solid;
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  .icon-check-circle-primary{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border-radius: 100%;
+    background: $primary;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 4px;
+      width: 7px;
+      height: 10px;
+      border-right: 2px solid;
+      border-bottom: 2px solid;
+      transform: rotate(45deg);
+    }
+  }
+}

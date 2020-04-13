@@ -10,7 +10,7 @@ main {
   z-index: 20;
   position: relative;
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     flex-direction: row;
   }
 }
@@ -48,8 +48,9 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1;
 
-  &.rounded{
+  &.rounded {
     @include media-breakpoint-up(md) {
       border-radius: 0 0 0 100px;
     }
@@ -57,5 +58,16 @@ body {
     @include media-breakpoint-up(lg) {
       min-height: 350px;
     }
+  }
+}
+
+.template-default {
+  background: linear-gradient(180deg, #222545 0%, #11131D 100%);
+
+  .content {
+    margin: auto 0;
+    width: 100%;
+    @include interpolate(padding-left, md, xxl, 0, 200px);
+    @include interpolate(padding-right, md, xxl, 0, 135px);
   }
 }

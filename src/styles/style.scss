@@ -15,6 +15,7 @@
 @import './components/navigation';
 @import './components/select';
 @import './components/logo';
+@import './components/background';
 @import './components/sidebar/sidebar';
 @import './components/socials';
 @import './components/dropdown';
@@ -25,6 +26,9 @@
 @import './components/comments';
 @import './components/votes';
 @import './components/form';
+@import './components/card';
+@import './components/alert';
 // pages
 @import './pages/index';
 @import './pages/skills';
+@import './pages/questionnarie';

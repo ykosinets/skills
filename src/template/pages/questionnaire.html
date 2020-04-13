@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+${require('../components/head.html').default}
+
+<body class="page-questionnaire template-default" style="opacity: 0">
+${require('../components/header/header-login.html').default}
+
+<div class="background__circles fs">
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+  <div class="background__circles-item"></div>
+</div>
+
+<main class="container mb-5">
+  <div class="card">
+    <div class="user user--vertical">
+      <img class="user-avatar" src="${require('../../images/avatar.jpg')}" alt="Jonathan">
+
+      <div class="user-row">
+        <p class="user-name">
+          Jonathan
+        </p>
+      </div>
+    </div>
+
+    <h3 class="page__title--center-bold">
+      Choose the skill you want to <br>ask about?
+    </h3>
+
+    <ul class="btn-list--horizontal">
+      <li><a class="btn btn--secondary-rounded-medium" href="#">Programming</a></li>
+      <li><a class="btn btn--dark-rounded-medium" href="#">UI/UX Design</a></li>
+      <li><a class="btn btn--dark-rounded-medium" href="#">Copyrighting</a></li>
+    </ul>
+  </div>
+</main>
+
+<main class="container mb-5">
+  <div class="card">
+    <div class="user user--vertical">
+      <img class="user-avatar" src="${require('../../images/avatar.jpg')}" alt="Jonathan">
+    </div>
+
+    <ul class="btn-list--horizontal">
+      <li><a class="btn btn--secondary-rounded-small" href="#">Programming</a></li>
+    </ul>
+
+    <h3 class="page__title--center-bold">
+      Your Question about skill to Jonathan?
+    </h3>
+
+    <textarea name="textarea" id="textarea" rows="6" placeholder="Select expertise"></textarea>
+
+    <div class="card__controls">
+      <ul>
+        <li class="prev"><a class="link-dark" href="#"><span class="icon icon-arrow-left"></span> BACK</a></li>
+        <li class="next">
+          <a class="btn btn--primary-solid-medium-circular-uppercase" href="#">Continue <span
+            class="icon icon-arrow-right"></span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<main class="container mb-5">
+  <div class="card">
+    <div class="user user--vertical">
+      <img class="user-avatar" src="${require('../../images/avatar.jpg')}" alt="Jonathan">
+    </div>
+
+    <h3 class="page__title--center-bold">
+      Pelase login
+    </h3>
+
+    <p class="card__text">If you don’t want to login and continue, you can click here in order to ask <br> your question
+      anonymously</p>
+
+    <div class="card__controls--center">
+      <ul>
+        <li class="prev">
+          <a class="btn btn--inactive-solid-medium-circular-uppercase" href="#">Ask anonymously</a>
+        </li>
+
+        <li class="next">
+          <a class="btn btn--primary-solid-medium-circular-uppercase" href="#">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<main class="container mb-5">
+  <div class="card">
+    <div class="user user--vertical">
+      <img class="user-avatar" src="${require('../../images/avatar.jpg')}" alt="Jonathan">
+    </div>
+
+    <h3 class="page__title--center-bold">
+      In what area <br>
+      are you an expert?
+    </h3>
+
+    <p class="card__text">Choose 3 areas in which you are an expert, and people will be <br>
+      able to ask you any question</p>
+
+    <form action="" autocomplete="on">
+      <div class="select">
+        <select name="expertise_1" id="expertise_1">
+          <option value="0" selected disabled>Select expertise</option>
+          <option value="0">Select expertise</option>
+        </select>
+
+        <span class="icon icon-angle-down-md"></span>
+      </div>
+
+      <div class="select">
+        <select name="expertise_2" id="expertise_2">
+          <option value="0" selected disabled>Select expertise</option>
+          <option value="0">Select expertise</option>
+        </select>
+
+        <span class="icon icon-angle-down-md"></span>
+      </div>
+
+      <div class="select">
+        <select name="expertise_3" id="expertise_3">
+          <option value="0" selected disabled>Select expertise</option>
+          <option value="0">Select expertise</option>
+        </select>
+
+        <span class="icon icon-angle-down-md"></span>
+      </div>
+
+      <div>
+        <button type="submit" class="btn btn-solid-primary-circular-large">Generate</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<main class="container">
+  <div class="card__wrapper">
+    <h3 class="page__title--center-bold">
+      Your image is generated!
+    </h3>
+
+    <p class="card__text">Share for your friends in socialmedia</p>
+
+    <div class="card card-sm">
+      <div class="user-card">
+        <div class="user-card__left">
+          ${require('../components/logo.html').default}
+
+          <div class="user user--vertical">
+            <img class="user-avatar" src="${require('../../images/avatar.jpg')}" alt="Jonathan">
+
+            <div class="user-row">
+              <p class="user-name">
+                Jonathan
+              </p>
+
+              <p class="user-nick">
+                @jonathanwack
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="user-card__right">
+          <div class="user-card__right-title">
+            Ask me anything about..
+          </div>
+          <p class="user-card__right-text">Three my skills:</p>
+
+          <ul class="skill__list">
+            <li>
+              <a href="#" class="skill skill-secondary-medium-badge">
+                Programming
+                <span class="badge"><span class="icon-star"></span>4.5</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="skill skill-secondary-large-badge">
+                UI/UX Design
+                <span class="badge"><span class="icon-star"></span>4.8</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="skill skill-secondary-small-badge">
+                Copyrighting
+                <span class="badge"><span class="icon-star"></span>3.9</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      ${require('../components/socials.html').default}
+    </div>
+  </div>
+</main>
+
+${require('../components/footer.html').default}
+${require('../components/alert.html').default}
+
+</body>
+</html>

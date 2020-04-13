@@ -11,11 +11,19 @@
 }
 
 
-.page__title {
+[class*="page__title"] {
   line-height: 1.2;
   margin: 0 0 30px;
   color: $white;
   text-transform: uppercase;
+
+  &[class*="bold"] {
+    font-weight: 700;
+  }
+
+  &[class*="center"] {
+    text-align: center;
+  }
 }
 
 .page__subtitle {
@@ -23,7 +31,7 @@
   color: #8590A1;
   font-size: 1.25rem;
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     margin: 0 0 50px;
   }
 }

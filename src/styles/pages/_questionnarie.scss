@@ -1,0 +1,25 @@
+.page-questionnaire {
+  [class*="page__title"] {
+    @include interpolate(margin-bottom, md, xxl, 35px, 50px);
+
+    br {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+    }
+  }
+
+
+  .card__wrapper {
+    [class*="page__title"] {
+      margin-bottom: 27px;
+    }
+  }
+
+  textarea {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+}

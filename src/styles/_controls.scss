@@ -29,6 +29,7 @@ $controls-radius: 25px;
   box-shadow: none;
   background: $background;
   text-transform: uppercase;
+  text-decoration: none;
   will-change: background, color;
   transition: .3s color ease-in-out, .3s background ease-in-out;
 
@@ -123,6 +124,16 @@ $controls-radius: 25px;
   }
 }
 
+@mixin mm($modifier) {
+  $len: str-length(#{&}); /* Get parent string length */
+  $parent: str-slice(#{&}, 2, $len); /* Remove leading . */
+
+  @at-root [class^="#{$parent}"][class*="-#{$modifier}"] {
+    @extend .#{$parent};
+    @content;
+  }
+}
+
 .btn-none {
   color: $black;
   border: none;
@@ -134,11 +145,6 @@ $controls-radius: 25px;
   @include generate-button(transparent, $primary, $primary, $navy-dark, $primary, $navy-dark, $white, $navy-dark);
   @include generate-button-size(md);
   @include generate-button-type(outline, $primary);
-
-  @include media-breakpoint-down(sm) {
-    padding: 7px 11px;
-    min-width: 0;
-  }
 }
 
 .btn__submit {
@@ -147,6 +153,364 @@ $controls-radius: 25px;
   @include generate-button-type();
 }
 
+.btn-secondary {
+  @include generate-button($secondary, $white, darken($secondary, 5%), $white, lighten($secondary, 5%), $white, $navy-dark, $white);
+  @include generate-button-size(md);
+  @include generate-button-type();
+  border-radius: 6px;
+
+  &--inactive {
+    @include generate-button(#232B48, #616B91, $secondary, $white, $secondary, $white, $navy-dark, $white);
+    @include generate-button-size(md);
+    @include generate-button-type();
+    border-radius: 6px;
+  }
+}
+
+.btn-list--horizontal {
+  list-style: none;
+  margin: 25px 0 40px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-up(md) {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  li {
+    margin-bottom: 20px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+      @include interpolate(margin-right, md, xl, 20px, 50px);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
 .select {
   @include generate-select(#8790B3);
+  width: 100%;
+}
+
+textarea {
+  background: #EFF4F9;
+  height: 150px;
+  width: 100%;
+  max-width: 820px;
+  resize: none;
+  border-radius: 7px;
+  padding: 15px 20px;
+  @include placeholder(#8790B3);
+  font-weight: 600;
+  font-size: 18px;
+  font-family: $proxima;
+}
+
+.card__socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  li {
+    margin-right: 36px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-btn {
+    @include generate-button(#121421, $white, lighten(#121421, 10%), $white, $navy-dark, $white, $navy-dark, $white);
+    @include generate-button-size(md);
+    @include generate-button-type(outline, #121421);
+
+    @include media-breakpoint-down(sm) {
+      padding: 7px 11px;
+      min-width: 0;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 1;
+  box-shadow: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  will-change: background, color;
+  transition: .3s color ease-in-out, .3s background ease-in-out;
+
+  //colors
+  @include mm(primary) {
+    background: $primary;
+    color: $primary-dirty;
+
+    &[class*="outline"] {
+      background: transparent;
+      border: 1px solid;
+      color: $primary;
+
+      &:hover {
+        background: $primary;
+        color: $navy-dark;
+      }
+
+      &:focus {
+        background: lighten($primary, 20%);
+        border-color: lighten($primary, 20%);
+      }
+
+      &:active {
+        background: lighten($primary, 35%);
+        border-color: lighten($primary, 35%);
+      }
+    }
+
+    &:hover {
+      background: lighten($primary, 16%);
+      color: $primary-dirty;
+    }
+
+    &:focus {
+      background: lighten($primary, 20%);
+      color: $primary-dirty;
+    }
+
+    &:active {
+      background: lighten($primary, 35%);
+      color: $primary-dirty;
+    }
+  }
+
+  @include mm(secondary) {
+    background: $secondary;
+    color: $white;
+
+    &:hover {
+      background: lighten($secondary, 16%);
+      color: $white;
+    }
+
+    &:focus {
+      background: lighten($secondary, 20%);
+      color: $navy-dark;
+    }
+
+    &:active {
+      background: lighten($secondary, 35%);
+      color: $navy-dark;
+    }
+  }
+
+  @include mm(dark) {
+    background: #121421;
+    color: $white;
+
+    &:hover {
+      background: lighten(#121421, 16%);
+      color: $white;
+    }
+
+    &:focus {
+      background: lighten(#121421, 20%);
+      color: $white;
+    }
+
+    &:active {
+      background: lighten(#121421, 35%);
+      color: $white;
+    }
+  }
+
+  @include mm(inactive) {
+    background: #282E4A;
+    color: #61738D;
+
+    &:hover {
+      background: lighten(#282E4A, 16%);
+      color: $white;
+    }
+
+    &:focus {
+      background: lighten(#282E4A, 20%);
+      color: $white;
+    }
+
+    &:active {
+      background: lighten(#282E4A, 35%);
+      color: $white;
+    }
+  }
+
+  //styles
+  @include mm(rounded) {
+    &[class*="small"] {
+      border-radius: 5px;
+    }
+    &[class*="medium"] {
+      border-radius: 5px;
+    }
+    &[class*="large"] {
+      border-radius: 15px;
+    }
+  }
+
+  @include mm(circular) {
+    border-radius: 100px;
+  }
+
+  @include mm(badge) {
+    &[class^="large"] {
+      @include interpolate(font-size, sm, xl, 30px, 44px);
+      padding: 18px 22px;
+    }
+
+    &[class^="medium"] {
+      @include interpolate(font-size, sm, xl, 28px, 37px);
+      padding: 14px 22px;
+    }
+
+    &[class^="small"] {
+      @include interpolate(font-size, sm, xl, 21px, 25.5px);
+      padding: 10px 22px;
+    }
+  }
+
+  //sizes
+  @include mm(large) {
+    font-size: 1.125rem;
+    padding: 18px 40px;
+    min-width: 200px;
+  }
+
+  @include mm(medium) {
+    font-size: 1rem;
+    padding: 15px 30px;
+    min-width: 150px;
+
+    @include media-breakpoint-down(sm) {
+      padding: 10px 18px;
+      min-width: 0;
+    }
+  }
+
+  @include mm(small) {
+    font-size: .875rem;
+    padding: 10px 30px;
+    min-width: 120px;
+  }
+
+  //font-styles
+  @include mm(bold) {
+    font-weight: 700;
+  }
+
+  @include mm(semibold) {
+    font-weight: 600;
+  }
+
+  //types
+  @include mm(outline) {
+    background: none;
+  }
+
+  @include mm(solid) {
+    border: none;
+  }
+}
+
+.skill {
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+
+  //colors
+  @include mm(primary) {
+    background: $primary;
+  }
+  @include mm(secondary) {
+    background: $secondary;
+    color: $white;
+  }
+  @include mm(dark) {
+    background: $dark;
+    color: $white;
+  }
+
+  //sizes
+  @include mm(small) {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 11px;
+    border-radius: 5px;
+
+    &[class*="badge"] {
+      padding-right: 34px;
+    }
+  }
+  @include mm(medium) {
+    font-weight: 600;
+    font-size: 22px;
+    padding: 7px 11px;
+    border-radius: 6px;
+
+    &[class*="badge"] {
+      padding-right: 36px;
+    }
+  }
+  @include mm(large) {
+    font-weight: 600;
+    font-size: 26px;
+    padding: 9px 11px;
+    border-radius: 8px;
+
+    &[class*="badge"] {
+      padding-right: 42px;
+    }
+  }
+}
+
+.skill__list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+
+  li{
+    margin-bottom: 10px;
+  }
+}
+
+[class*="skill"][class*="badge"] {
+  position: relative;
+
+  .badge {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 0;
+    background: $primary;
+    color: $secondary;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 14px;
+
+    .icon-star {
+      margin-right: 8px;
+    }
+  }
 }

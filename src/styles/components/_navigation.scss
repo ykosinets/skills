@@ -106,13 +106,5 @@
       top: auto;
       right: auto;
     }
-
-    .btn__login {
-      margin-top: 8px;
-
-      @include media-breakpoint-up(md) {
-        margin-top: 1px;
-      }
-    }
   }
 }

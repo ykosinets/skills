@@ -111,3 +111,46 @@ $rect-sizes: (
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.arrow{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.icon-arrow-right{
+  position: relative;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 18px;
+  margin-left: 12px;
+
+  &:before{
+    content: '';
+    @extend .arrow;
+    margin-top: -1px;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+.icon-arrow-left{
+  position: relative;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 18px;
+  margin-right: 5px;
+
+  &:before{
+    content: '';
+    @extend .arrow;
+    margin-top: -2px;
+    transform: translate(-50%, -50%) rotate(225deg);
+  }
+}
